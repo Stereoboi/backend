@@ -18,7 +18,7 @@ const connectDB = async () => {
   try {
     const options: DataSourceOptions = {
       host: process.env.POSTGRES_HOST,
-      port: Number(process.env.POSTGRES_PORT),
+      port: Number(process.env.POSTGRES_PORT_DB),
       logging: ["query", "error"],
       type: "postgres",
       entities: [Todo, User],
@@ -27,7 +27,7 @@ const connectDB = async () => {
       database: process.env.POSTGRES_DB,
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
-      ssl: getSSLConfig(process.env.SERVER_MODE),
+      ssl: true,
       synchronize: true,
     };
     await createConnection(options);
