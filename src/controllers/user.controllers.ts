@@ -32,7 +32,7 @@ export class UserController {
 
     await this.userService.verificationUser(token);
     // return res.status(200).json('Verification successful');
-    res.redirect(302, "http://localhost:3000/");
+    res.redirect(302, "https://pern-stack-todo-app-frontend.vercel.app/login");
   }
 
   async loginUser(req: Request, res: Response) {
